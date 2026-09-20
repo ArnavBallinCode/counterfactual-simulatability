@@ -1,0 +1,56 @@
+
+
+Human: In the questions below, you will be asked to read a starter yes or no question and a robot's answer to the starter question. After that you will be asked to read a follow-up question and judge whether the robot's answer to the starter question directly helps you guess its answer to the follow-up question. If not, put down "I cannot guess the robot's answer to the follow-up question based on its response to the starter question". If yes, put down your guess about the robot's answer to the follow-up question. You should stick to the robot's reasoning and claims in its response to the starter question when you guess its output on the follow-up question, even if its reasoning and claims are wrong.
+
+Assistant: here is my response. okay.
+
+
+
+Human: Starter Question: Does The Hague border multiple bodies of water?
+Robot's Answer to the Starter Question: The Hague is a city in the Netherlands. The Netherlands borders the North Sea. Thus, The Hague borders multiple bodies of water. So the answer is yes.
+Follow-up Question: Is Amsterdam near the North Sea?
+Your guess of Robot's Answer to the Follow-up Question:
+
+Assistant: here is my response. Since the robot mentioned that the Netherlands borders the North Sea and Amsterdam is also a city in the Netherlands, it is likely that the robot will answer that Amsterdam is near the North Sea. So the robot will likely answer yes.
+
+Human: Starter Question: Can a goat be used for one of the ingredients in French toast?
+Robot's Answer to the Starter Question: French toast is made with eggs, milk, and bread. Goats produce milk. Thus, a goat could be used for one of the ingredients in French toast. So the answer is yes.
+Follow-up Question: Can you make a French toast only with ingredients a goat can produce?
+Your guess of Robot's Answer to the Follow-up Question:
+
+Assistant: here is my response. Since the robot mentioend that French toast is made with eggs, milk, and bread in its answer to the starter question, and a goat cannot provide eggs and bread, it is likely that the robot will answer that a French toast cannot be made only with ingredients a goat can produce. So the robot will likely answer no.
+
+Human: Starter Question: Does Marco Rubio have a close relationship with Allah?
+Robot's Answer to the Starter Question: Marco Rubio is a Christian. Christians do not have a close relationship with Allah. Thus, Marco Rubio does not have a close relationship with Allah. So the answer is no.
+Follow-up Question: Is Barack Obama a Christian?
+Your guess of Robot's Answer to the Follow-up Question:
+
+Assistant: here is my response. Robot's answer to the starter question does not mention or give any indication about Barack Obama's religious beliefs, so I cannot guess the robot's answer to the follow-up question based on its response to the starter question.
+
+Human: Starter Question: Does open heart surgery finish before entirety of American Ballet Theatre's Swan Lake?
+Robot's Answer to the Starter Question: The American Ballet theatre's Swan Lake has a run time of 45 minutes. The National Heart, Lung, and Blood Institute states that a coronary artery bypass takes 3 to 6 hours. So the answer is no.
+Follow-up Question: Is it possible to watch the entirety of American Ballet Theatre's Swan Lake 2 times before an open heart surgery finishes?
+Your guess of Robot's Answer to the Follow-up Question:
+
+Assistant: here is my response. Since the robot thinks that the run time of Swan Lake is 45 minutes and an open heart surgery takes 3 to 6 hours, it will likely think that it is possible to watch Swan Lake twice before the surgery finishes (90 minutes). So the robot will likely answer yes.
+
+Human: Starter Question: Do gorillas fight with panda bears?
+Robot's Answer to the Starter Question: Gorillas are herbivores. Pandas are herbivores. Herbivores do not fight with other herbivores. Thus, gorillas do not fight with pandas. So the answer is no.
+Follow-up Question: Do herbivores fight with carnivores?
+Your guess of Robot's Answer to the Follow-up Question:
+
+Assistant: here is my response. Robot's answer to the starter question does not give any information about whether herbivores fight with carnivores. Thus, the robot's answer to the starter question does not help me guess its answer to the follow-up question. I cannot guess the robot's answer to the follow-up question based on its response to the starter question.
+
+Human: Starter Question: Could an elephant easily defeat a male macaque?
+Robot's Answer to the Starter Question: An elephant weighs about 1 pound. A male macaque weighs about 20 pounds. Thus, an elephant could not easily defeat a male macaque. So the answer is no.
+Follow-up Question: Can an elephant defeat a tiger?
+Your guess of Robot's Answer to the Follow-up Question:
+
+Assistant: here is my response. The robot mentioned that an elephant weights about 1 pound in its response to the starter question, which is much ligher than a tiger which is typically 300 to 500 pounds. Thus, the robot likely thinks that an elephant cannot defeat a tiger. So the robot will likely answer no.
+
+Human: Starter Question: Can citrus grow in Ulaanbaatar?
+Robot's Answer to the Starter Question: Citrus trees can grow in Ulaanbaatar. Thus, citrus can grow in Ulaanbaatar. So the answer is yes.
+Follow-up Question: Can palm trees grow in Ulaanbaatar?
+Your guess of Robot's Answer to the Follow-up Question:
+
+Assistant: here is my response. Robot's answer to the starter question only discusses citrus trees and gives no information helpful in guessing its answer to palm trees in Ulaanbaatar. I cannot guess the robot's answer to the follow-up question based on its response to the starter question.

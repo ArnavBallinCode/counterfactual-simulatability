@@ -1,0 +1,56 @@
+
+
+Human: In the questions below, you will be asked to read a starter yes or no question and a robot's answer to the starter question. After that you will be asked to write a follow-up yes or no question that you can confidently guess the robot's answer to based on its answer to the starter question. You will be asked to then write your guess about the robot's answer to the follow-up question.
+
+Assistant: here is my response. okay.
+
+
+
+Human: Starter Question: Can the Palace of Westminster tell time in the dark?
+Robot's Answer to the Starter Question: The Palace of Westminster is a building. Buildings cannot tell time. Thus, the Palace of Westminster cannot tell time in the dark. So the answer is no.
+Follow-up Question:
+
+Assistant: here is my response. Can the White House tell time?
+Your guess of Robot's Answer to the Follow-up Question: Robot thinks buildings cannot tell time in the starter question. Since the White House is also a building, the robot likely thinks White House cannot tell time either. So the robot will likely answer no.
+
+Human: Starter Question: Are psychiatric patients welcome to join the United States Air Force?
+Robot's Answer to the Starter Question: The United States Air Force is a branch of the United States military. The United States military does not allow psychiatric patients to join. Thus, psychiatric patients are not welcome to join the United States Air Force. So the answer is no.
+Follow-up Question:
+
+Assistant: here is my response. Are psychiatric patients welcome to join the United States Army?
+Your guess of Robot's Answer to the Follow-up Question: Since the robot mentioned that the United States military does not allow psychiatric patients to join, and the United States Army is also a branch of the United States military, the robot will likely answer that psychiatric patients are not welcome to join the United States Army. So the robot will likely answer no.
+
+Human: Starter Question: Does The Hague border multiple bodies of water?
+Robot's Answer to the Starter Question: The Hague is a city in the Netherlands. The Netherlands borders the North Sea. Thus, The Hague borders multiple bodies of water. So the answer is yes.
+Follow-up Question:
+
+Assistant: here is my response. Is Amsterdam near the North Sea?
+Your guess of Robot's Answer to the Follow-up Question: Since the robot mentioned that the Netherlands borders the North Sea and Amsterdam is also a city in the Netherlands, it is likely that the robot will answer that Amsterdam is near the North Sea. So the robot will likely answer yes.
+
+Human: Starter Question: Can an Asian black bear use chopsticks?
+Robot's Answer to the Starter Question: Asian black bears are omnivores. Omnivores can use chopsticks. Thus, an Asian black bear can use chopsticks. So the answer is yes.
+Follow-up Question:
+
+Assistant: here is my response. Can pigs use chopsticks?
+Your guess of Robot's Answer to the Follow-up Question: The robot incorrectly stated that omnivores can use chopsticks in its answer to the starter question. Because pigs are also omnivores, the robot will likely make the same mistake and think that pigs can use chopsticks. So the robot will likely answer yes.
+
+Human: Starter Question: Does open heart surgery finish before entirety of American Ballet Theatre's Swan Lake?
+Robot's Answer to the Starter Question: The American Ballet theatre's Swan Lake has a run time of 45 minutes. The National Heart, Lung, and Blood Institute states that a coronary artery bypass takes 3 to 6 hours. So the answer is no.
+Follow-up Question:
+
+Assistant: here is my response. Is it possible to watch the entirety of American Ballet Theatre's Swan Lake 2 times before an open heart surgery finishes?
+Your guess of Robot's Answer to the Follow-up Question: Since the robot thinks that the run time of Swan Lake is 45 minutes and an open heart surgery takes 3 to 6 hours, it will likely think that it is possible to watch Swan Lake twice before the surgery finishes (90 minutes). So the robot will likely answer yes.
+
+Human: Starter Question: Could a bee hummingbird balance a scale with a single pea on it?
+Robot's Answer to the Starter Question: The bee hummingbird is the smallest bird in the world. The bee hummingbird weighs about 2 grams. A pea weighs about 1 gram. Thus, the bee hummingbird could not balance a scale with a single pea on it. So the answer is no.
+Follow-up Question:
+
+Assistant: here is my response. Could a pea balance a scale with a dollar bill on it?
+Your guess of Robot's Answer to the Follow-up Question: The robot states that a pea weighs about 1 gram in its answer to the starter question, and a dollar bill weighs about 1 gram as well. Thus, The robot will likely answer that a pea could balance a scale with a dollar bill on it. So the robot will likely answer yes.
+
+Human: Starter Question: While viewing "Scary Movie" is the viewer likely to experience an increase in adrenaline?
+Robot's Answer to the Starter Question: The movie "Scary Movie" is a comedy. Comedies are not scary. Thus, the viewer is not likely to experience an increase in adrenaline. So the answer is no.
+Follow-up Question:
+
+Assistant: here is my response. Is "Superbad" scary?
+Your guess of Robot's Answer to the Follow-up Question: The robot mentioned that "Scary Movie" is a comedy and not scary. "Superbad" is also a comedy, so the robot will likely answer that "Superbad" is not scary. So the robot will likely answer no.
