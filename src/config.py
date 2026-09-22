@@ -1,6 +1,6 @@
 """
 Configuration and Environment Settings Module
-Centralizes paths, model names, and environment loading.
+Centralizes paths, model proxies, reproducibility seed 42, and API rate-limiting parameters.
 """
 
 import os
@@ -28,7 +28,16 @@ FIGURES_DIR.mkdir(parents=True, exist_ok=True)
 load_dotenv(PROJECT_ROOT / '.env')
 GROQ_API_KEY = os.getenv('GROQ_API_KEY', '')
 
-# Model configuration
+# Reproducibility seed
+SEED = 42
+
+# User's exact Groq models
 MODEL_LARGE = os.getenv('MODEL_LARGE', 'openai/gpt-oss-120b')
 MODEL_SMALL = os.getenv('MODEL_SMALL', 'openai/gpt-oss-20b')
 SIMULATOR_MODEL = os.getenv('SIMULATOR_MODEL', 'openai/gpt-oss-120b')
+
+# Rate limit / delay settings
+# Increased delay to 8.0s so we never exceed Groq's RPM
+REQUEST_DELAY = 2.0     # seconds between API calls
+MAX_RETRIES = 8
+INITIAL_BACKOFF = 10.0  # seconds
