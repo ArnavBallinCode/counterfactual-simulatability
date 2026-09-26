@@ -1,6 +1,7 @@
 """
-Counterfactual Question Generation Module (SimQG) - initial version
-Generates 10 follow-up yes/no questions per explanation.
+Counterfactual Question Generation Module (SimQG)
+Synthesizes 10 follow-up counterfactual yes/no questions per explanation
+whose answers can be inferred directly from the model's rationale.
 """
 
 import json
@@ -26,13 +27,26 @@ def build_batch_simqg_prompt(orig_qn, orig_expl, num_samples=10):
 
 def extract_counterfactual_questions(response_text, num_samples=10):
     questions = []
-    for line in response_text.strip().split('\n'):
-        cleaned = re.sub(r'^[0-9]+[\.\)]\s*', '', line.strip())
+    lines = response_text.strip().split('\n')
+
+    # Line by line inspection
+    for line in lines:
+        cleaned = line.strip()
+        cleaned = re.sub(r'^[0-9]+[\.\)]\s*', '', cleaned)
         cleaned = re.sub(r'^[-*]\s*', '', cleaned)
         if '?' in cleaned:
             q_part = cleaned[:cleaned.find('?') + 1].strip()
             if len(q_part) > 15 and q_part not in questions:
                 questions.append(q_part)
+
+    # Regex fallback if fewer than num_samples
+    if len(questions) < num_samples:
+        q_regex = r'\b((?:Would|Could|Can|Is|Are|Did|Do|Does|Will|Was|Were|Has|Have|Had|If)\b[^?\n]+\?)'
+        for match in re.finditer(q_regex, response_text, re.IGNORECASE):
+            q_text = match.group(1).strip()
+            if len(q_text) > 15 and q_text not in questions:
+                questions.append(q_text)
+
     return questions[:num_samples]
 
 def generate_counterfactuals_for_explanations(explanations, generator_model=SIMULATOR_MODEL, num_samples=10, use_cache=True):
@@ -43,21 +57,39 @@ def generate_counterfactuals_for_explanations(explanations, generator_model=SIMU
     model_tag = taskqa_model.replace('/', '_').replace(':', '_')
     out_file = OUTPUTS_DIR / f'counterfactuals_{model_tag}_{expl_type}.jsonl'
 
-    print(f'Generating counterfactuals for {taskqa_model} ({expl_type})...')
+    print(f'Generating counterfactuals for {taskqa_model} ({expl_type}) using {generator_model}...')
     for item in tqdm(explanations):
-        prompt = build_batch_simqg_prompt(item['question'], item['pred_expl'], num_samples=num_samples)
-        raw_output = call_groq_cached(prompt=prompt, model=generator_model, temperature=0.7,
-                                      top_p=0.95, max_tokens=800, use_cache=use_cache)
+        orig_id = item['id']
+        orig_qn = item['question']
+        orig_expl = item['pred_expl']
+
+        prompt = build_batch_simqg_prompt(orig_qn, orig_expl, num_samples=num_samples)
+        raw_output = call_groq_cached(
+            prompt=prompt,
+            model=generator_model,
+            temperature=0.7,
+            top_p=0.95,
+            max_tokens=800,
+            use_cache=use_cache
+        )
         extracted = extract_counterfactual_questions(raw_output, num_samples=num_samples)
-        results.append({
-            'orig_id': item['id'], 'orig_question': item['question'],
-            'orig_answer': item['pred_ans'], 'orig_explanation': item['pred_expl'],
-            'model': taskqa_model, 'expl_type': expl_type,
+
+        record = {
+            'orig_id': orig_id,
+            'orig_question': orig_qn,
+            'orig_answer': item['pred_ans'],
+            'orig_explanation': orig_expl,
+            'model': taskqa_model,
+            'expl_type': expl_type,
             'counterfactuals': [{'cf_id': i, 'question': q} for i, q in enumerate(extracted)],
             'raw_output': raw_output
-        })
+        }
+        results.append(record)
+
     with open(out_file, 'w', encoding='utf-8') as f:
         for r in results:
             f.write(json.dumps(r) + '\n')
-    print(f'Generated counterfactuals -> {out_file}')
+
+    total_cfs = sum(len(r['counterfactuals']) for r in results)
+    print(f'Generated {total_cfs} counterfactual questions across {len(results)} explanations -> {out_file}')
     return results
