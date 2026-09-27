@@ -1,0 +1,6 @@
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+outputs/cache.sqlite
+outputs/groq_cache.sqlite

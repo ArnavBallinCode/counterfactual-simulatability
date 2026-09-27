@@ -1,0 +1,84 @@
+{
+  "table4_simulation_precision": {
+    "openai/gpt-oss-20b_cot": {
+      "macro_precision": 74.94,
+      "micro_precision": 80.3,
+      "simulatable_count": 203,
+      "correct_count": 163,
+      "unsimulatable_count": 75
+    },
+    "openai/gpt-oss-20b_posthoc": {
+      "macro_precision": 85.79,
+      "micro_precision": 91.15,
+      "simulatable_count": 113,
+      "correct_count": 103,
+      "unsimulatable_count": 144
+    },
+    "openai/gpt-oss-120b_cot": {
+      "macro_precision": 85.78,
+      "micro_precision": 86.24,
+      "simulatable_count": 218,
+      "correct_count": 188,
+      "unsimulatable_count": 67
+    },
+    "openai/gpt-oss-120b_posthoc": {
+      "macro_precision": 71.75,
+      "micro_precision": 76.19,
+      "simulatable_count": 63,
+      "correct_count": 48,
+      "unsimulatable_count": 228
+    }
+  },
+  "table5_simulation_generality": {
+    "openai/gpt-oss-20b_cot": {
+      "bleu_generality": 0.897,
+      "cosine_generality": 0.33,
+      "jaccard_generality": 0.837,
+      "num_evaluable_explanations": 28
+    },
+    "openai/gpt-oss-20b_posthoc": {
+      "bleu_generality": 0.877,
+      "cosine_generality": 0.352,
+      "jaccard_generality": 0.806,
+      "num_evaluable_explanations": 19
+    },
+    "openai/gpt-oss-120b_cot": {
+      "bleu_generality": 0.884,
+      "cosine_generality": 0.322,
+      "jaccard_generality": 0.825,
+      "num_evaluable_explanations": 28
+    },
+    "openai/gpt-oss-120b_posthoc": {
+      "bleu_generality": 0.832,
+      "cosine_generality": 0.331,
+      "jaccard_generality": 0.809,
+      "num_evaluable_explanations": 8
+    }
+  },
+  "table6_task_accuracy": {
+    "openai/gpt-oss-20b_cot": {
+      "valid_answer_rate": 100.0,
+      "total_questions": 30
+    },
+    "openai/gpt-oss-20b_posthoc": {
+      "valid_answer_rate": 56.67,
+      "total_questions": 30
+    },
+    "openai/gpt-oss-120b_cot": {
+      "valid_answer_rate": 100.0,
+      "total_questions": 30
+    },
+    "openai/gpt-oss-120b_posthoc": {
+      "valid_answer_rate": 16.67,
+      "total_questions": 30
+    }
+  },
+  "statistical_tests": {
+    "large_vs_small_cot_ttest": {
+      "t_statistic": 0.5363,
+      "p_value": 0.5959,
+      "delta_precision": 5.12,
+      "aligned_sample_count": 30
+    }
+  }
+}
