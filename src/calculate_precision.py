@@ -1,7 +1,7 @@
 """
 Simulation Precision Evaluation Module
 Computes Macro and Micro Simulation Precision over the simulatable subset C*
-following Section 3 of Chen et al. (EMNLP 2023).
+following Section 3 of Chen et al. (ICML 2024).
 """
 
 import json

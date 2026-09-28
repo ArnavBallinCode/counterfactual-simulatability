@@ -2,7 +2,7 @@
 
 **Course**: DA351 — Explainable AI (XAI)  
 **Project Title**: Research Paper Replication: Counterfactual Simulatability of Natural Language Explanations  
-**Paper Selected**: *Do Models Explain Themselves? Counterfactual Simulatability of Natural Language Explanations* (Chen et al., EMNLP 2023)  
+**Paper Selected**: *Do Models Explain Themselves? Counterfactual Simulatability of Natural Language Explanations* (Chen et al., ICML 2024)  
 **Evaluation Phase**: Phase 1 – Paper Replication (20 Marks)  
 
 ---
@@ -35,7 +35,7 @@ The following table documents the complete sequence of technical prompts provide
 | 11 | *"Explain each member's contributions in very simple, conversational language with two concise bullet points and their specific assigned files."* | Project documentation | Simplified technical descriptions into two clear, conversational talking points per member, referencing the specific source files (`run_pipeline.py`, `src/generate_cot.py`, `src/run_simulation.py`, etc.) for presentation clarity. |
 | 12 | *"Please check and strictly confirm whether our work fully satisfies all Phase 1 evaluation criteria (model, XAI method, dataset, and reproduced results)."* | Deliverables audit | Conducted a comprehensive audit against the Phase 1 rubric (20 Marks). Verified model selection (20B/120B proxies), XAI method (SimQG + SimQA + $\bot$), dataset (StrategyQA official test set), and reproduced metrics (Tables 4, 5, and 6). |
 | 13 | *"Explain the difference between Micro and Macro precision in simple terms using our numbers. Then provide copy-pasteable text for the Result Comparison and 1-Page Summary with clear interpretations."* | `src/calculate_precision.py`<br>`outputs/metrics.json` | Formulated clear mathematical definitions: Macro averages question-level accuracy across prompts ($|Q|$), while Micro pools all valid counterfactuals ($C^*$). Verified that our implementation correctly separates the two and structured ready-to-use report text. |
-| 14 | *"Are the original paper's published numbers for Table 5 and Table 6 included? Please extract them directly from the paper PDF so we can show a complete side-by-side comparison."* | `LLM Self-Explanations Research Paper.pdf` | Extracted exact values from Tables 3, 4, 5, and 6 of the original EMNLP 2023 paper PDF. Built side-by-side comparison tables including exact deltas and qualitative outcomes (Better / On Par / Worse). |
+| 14 | *"Are the original paper's published numbers for Table 5 and Table 6 included? Please extract them directly from the paper PDF so we can show a complete side-by-side comparison."* | `LLM Self-Explanations Research Paper.pdf` | Extracted exact values from Tables 3, 4, 5, and 6 of the original ICML 2024 paper PDF. Built side-by-side comparison tables including exact deltas and qualitative outcomes (Better / On Par / Worse). |
 | 15 | *"Remove the member contributions section from AI_USAGE.md to adhere strictly to the instructor's policy, keeping only Tools Used, Prompts Used, and How Output Was Modified."* | `AI_USAGE.md` | Refactored `AI_USAGE.md` to strictly contain the three required sections mandated by the course guidelines, ensuring compliance with academic integrity guidelines. |
 
 ---

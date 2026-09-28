@@ -1,7 +1,7 @@
 """
 Explanation Generation Module (CoT and Post-Hoc)
 Generates model answers and step-by-step or post-hoc rationales
-using StrategyQA few-shot exemplars from Chen et al. (EMNLP 2023).
+using StrategyQA few-shot exemplars from Chen et al. (ICML 2024).
 """
 
 import json

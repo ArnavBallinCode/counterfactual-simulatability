@@ -1,6 +1,6 @@
 """
 Publication Visualization Module
-Generates side-by-side comparison charts benchmarking replication results against Chen et al. (EMNLP 2023).
+Generates side-by-side comparison charts benchmarking replication results against Chen et al. (ICML 2024).
 """
 
 import json
