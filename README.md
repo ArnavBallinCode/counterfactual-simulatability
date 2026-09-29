@@ -69,8 +69,7 @@ replication/
 ├── requirements.txt          # Python dependencies
 ├── README.md                 # Complete documentation and execution guide
 ├── AI_USAGE.md               # Academic integrity policy and prompt log
-├── Replication_Summary.pdf   # 1-page formal replication summary report
-├── Experimental Result Comparison_ Replication vs. Original Paper.pdf # Detailed comparison deliverable
+├── Summary_Results.pdf       # Consolidated deliverables: 1-page summary and result comparison
 ├── run_pipeline.py           # End-to-end master execution pipeline
 ├── data/
 │   ├── strategyqa_raw/       # StrategyQA test set questions
@@ -164,8 +163,7 @@ python run_pipeline.py --limit 30 --num_cfs 10 --no_cache
 * [x] **Benchmark Reproduction**: Tables 4, 5, and 6 reproduced with full test-set coverage and statistical parity.
 * [x] **Publication Figures**: Grouped comparison bar charts saved in `outputs/figures/`.
 * [x] **Deliverable Reports**:
-  * `Replication_Summary.pdf` (1-page formal replication summary report).
-  * `Experimental Result Comparison_ Replication vs. Original Paper.pdf` (Detailed cross-paper comparison deliverable).
+  * `Summary_Results.pdf` (Consolidated 2-page deliverable report: 1-page replication summary and detailed result comparison against ICML 2024).
 * [x] **Academic Integrity**: `AI_USAGE.md` documenting all tools, developer prompts, and verification methodologies.
 
 ---
