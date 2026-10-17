@@ -11,3 +11,4 @@ seaborn>=0.12.0
 scipy>=1.10.0
 tqdm>=4.65.0
 pypdf>=4.0.0
+unilimit>=0.1.1; python_version >= "3.11"
