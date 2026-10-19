@@ -1,6 +1,6 @@
 """
 Groq API Inference Client and Persistent Caching Layer
-Manages API requests with exponential backoff, rate limit handling, and SQLite response caching.
+Manages API requests with fast retries and SQLite response caching.
 """
 
 import os
@@ -67,15 +67,6 @@ def set_cached_response(cache_key, model, prompt, response):
     conn.commit()
     conn.close()
 
-def _extract_retry_after(error_str):
-    # e.g., 'Please try again in 2m54.095s' or 'try again in 45.2s'
-    m_min = re.search(r'try again in (?:(\d+)m)?(\d+(?:\.\d+)?)s', error_str)
-    if m_min:
-        mins = float(m_min.group(1)) if m_min.group(1) else 0.0
-        secs = float(m_min.group(2))
-        return (mins * 60.0) + secs + 2.0
-    return None
-
 def call_groq_cached(prompt, model, temperature=0.0, top_p=1.0, max_tokens=800, stop=None, use_cache=True):
     cache_key = _make_cache_key(model, prompt, temperature, top_p, max_tokens, stop)
     if use_cache:
@@ -84,12 +75,12 @@ def call_groq_cached(prompt, model, temperature=0.0, top_p=1.0, max_tokens=800, 
             return cached
 
     client = get_client()
-    backoff = INITIAL_BACKOFF
     stop_sequences = [stop] if isinstance(stop, str) else stop
 
-    for attempt in range(MAX_RETRIES + 4):
+    for attempt in range(MAX_RETRIES):
         try:
-            time.sleep(REQUEST_DELAY)
+            if REQUEST_DELAY > 0:
+                time.sleep(REQUEST_DELAY)
             chat_completion = client.chat.completions.create(
                 messages=[{'role': 'user', 'content': prompt}],
                 model=model,
@@ -108,15 +99,13 @@ def call_groq_cached(prompt, model, temperature=0.0, top_p=1.0, max_tokens=800, 
             return response_text
 
         except RateLimitError as e:
-            err_str = str(e)
-            retry_wait = _extract_retry_after(err_str)
-            wait_time = retry_wait if retry_wait else backoff
-            print(f'[Groq RateLimit] Sleeping for {wait_time:.1f}s to respect quota... (Attempt {attempt+1})')
+            # Short wait of 2-4 seconds instead of hundreds of seconds
+            wait_time = 2.0 + (attempt * 0.5)
+            print(f'[Groq RateLimit] Quick retry in {wait_time:.1f}s... (Attempt {attempt+1}/{MAX_RETRIES})')
             time.sleep(wait_time)
-            backoff *= 1.8
         except APIError as e:
-            print(f'[Groq APIError] Attempt {attempt+1}. Error: {e}')
-            time.sleep(backoff)
-            backoff *= 1.5
+            wait_time = 2.0
+            print(f'[Groq APIError] Attempt {attempt+1}. Retrying in {wait_time:.1f}s. Error: {e}')
+            time.sleep(wait_time)
 
-    raise RuntimeError(f'Failed to get response from Groq for model {model} after retries.')
+    raise RuntimeError(f'Failed to get response from Groq for model {model} after {MAX_RETRIES} retries.')
