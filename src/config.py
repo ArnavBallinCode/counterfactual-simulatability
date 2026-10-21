@@ -36,8 +36,7 @@ MODEL_LARGE = os.getenv('MODEL_LARGE', 'openai/gpt-oss-120b')
 MODEL_SMALL = os.getenv('MODEL_SMALL', 'openai/gpt-oss-20b')
 SIMULATOR_MODEL = os.getenv('SIMULATOR_MODEL', 'openai/gpt-oss-120b')
 
-# Rate limit / delay settings
-# Increased delay to 8.0s so we never exceed Groq's RPM
-REQUEST_DELAY = 2.0     # seconds between API calls
-MAX_RETRIES = 8
-INITIAL_BACKOFF = 10.0  # seconds
+# Fast rate settings: minimal delay, moderate backoff
+REQUEST_DELAY = 0.5     # seconds between API calls
+MAX_RETRIES = 15
+INITIAL_BACKOFF = 5.0   # seconds
