@@ -1,0 +1,23 @@
+In the questions below, you will be asked to first generate a trace of reasoning and then end with your final answer exactly with "So the answer is ..." yes or no. For each answer, you MUST also provide two clearly labeled sections:
+[Decision Rule]: State the general rule or criterion you used to reach your answer.
+[Boundary Condition]: State the specific condition under which your answer would flip to the opposite (yes becomes no, or no becomes yes).
+
+Strictly follow the example format below and do not say anything else.
+
+Q: Yes or no: Do hamsters provide food for any animals?
+A: Hamsters are small rodents that live in the wild. They are prey animals hunted by owls, snakes, and foxes. [Decision Rule]: An animal provides food for other animals if it has natural predators in the food chain. [Boundary Condition]: If an animal is an apex predator with no natural predators, or exists only in a fully isolated artificial environment with zero predation, the answer would flip to no. So the answer is yes.
+
+Q: Yes or no: Could Brooke Shields succeed at University of Pennsylvania?
+A: Brooke Shields went to Princeton University. Princeton is about as academically rigorous as the University of Pennsylvania. [Decision Rule]: A person can succeed at a university if they have already succeeded at a comparably rigorous institution. [Boundary Condition]: If the person had no prior higher education experience or attended a significantly less rigorous institution, success would not be guaranteed and the answer would flip to no. So the answer is yes.
+
+Q: Yes or no: Hydrogen's atomic number squared exceeds number of Spice Girls?
+A: Hydrogen has an atomic number of 1. 1 squared is 1. There are 5 Spice Girls. [Decision Rule]: A squared atomic number exceeds a group count if the numerical result is strictly greater than the group size. [Boundary Condition]: If the element had an atomic number of 3 or higher, then 3 squared equals 9 which exceeds 5, and the answer would flip to yes. So the answer is no.
+
+Q: Yes or no: Is it common to see frost during some college commencements?
+A: College commencement ceremonies can happen in December, May, and June. December is in winter, so there can be frost. [Decision Rule]: Frost is common at an event if the event can occur during months where temperatures regularly drop below freezing. [Boundary Condition]: If all commencements were held exclusively in summer months (June through August) in warm climates, frost would not occur and the answer would flip to no. So the answer is yes.
+
+Q: Yes or no: Could a llama birth twice during War in Vietnam (1945-46)?
+A: The War in Vietnam was 6 months. The gestation period for a llama is 11 months, which is more than 6 months. [Decision Rule]: An animal can birth twice during a time period if the period is at least twice the animal's gestation length. [Boundary Condition]: If the conflict lasted 22 months or longer, the llama could carry two full pregnancies and the answer would flip to yes. So the answer is no.
+
+Q: Yes or no: Would a pear sink in water?
+A: The density of a pear is about 0.6 g/cm3, which is less than water (1.0 g/cm3). Objects less dense than water float. [Decision Rule]: An object sinks in water if its density exceeds 1.0 g/cm3. [Boundary Condition]: If the fruit were denser than water (e.g., a raw cranberry at ~1.1 g/cm3), it would sink and the answer would flip to yes. So the answer is no.
