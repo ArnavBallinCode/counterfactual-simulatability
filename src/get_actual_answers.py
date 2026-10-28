@@ -30,6 +30,20 @@ def parse_batch_actual_output(raw_text, num_cfs):
                     results[idx] = 'yes'
                 elif val.startswith('no') or 'no' in val:
                     results[idx] = 'no'
+
+    # Fallback for conversational or reasoning paragraph outputs (e.g. Q1: ... answer: yes)
+    if all(r == 'neither' for r in results):
+        for i in range(1, num_cfs + 1):
+            pattern = rf'(?:Q|Question\s*){i}\b.*?answer[:\s]+(yes|no)\b'
+            m = re.search(pattern, raw_text, re.IGNORECASE | re.DOTALL)
+            if m:
+                results[i - 1] = m.group(1).lower()
+            else:
+                pattern2 = rf'\b{i}[\.\)]\s*(yes|no)\b'
+                m2 = re.search(pattern2, raw_text, re.IGNORECASE)
+                if m2:
+                    results[i - 1] = m2.group(1).lower()
+
     return results
 
 def evaluate_actual_answers_on_counterfactuals(cf_records, use_cache=True):
@@ -63,7 +77,7 @@ def evaluate_actual_answers_on_counterfactuals(cf_records, use_cache=True):
             prompt=prompt,
             model=taskqa_model,
             temperature=0.0,
-            max_tokens=600,
+            max_tokens=800,
             stop=None,
             use_cache=use_cache
         )
