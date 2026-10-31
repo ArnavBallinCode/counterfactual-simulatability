@@ -1,0 +1,105 @@
+{
+  "description": "Phase 2 Extension: Contrastive Decision-Boundary Prompting (CDBP) vs Phase 1 Baseline (N=30 StrategyQA Benchmark)",
+  "conditions": {
+    "openai/gpt-oss-20b_contrastive_cot": {
+      "baseline_key": "openai/gpt-oss-20b_cot",
+      "extension_key": "openai/gpt-oss-20b_contrastive_cot",
+      "precision": {
+        "phase1_macro": 74.94,
+        "phase2_macro": 81.75,
+        "delta_pp": 6.81
+      },
+      "simulatable_yield": {
+        "phase1_yield_pct": 73.02,
+        "phase2_yield_pct": 49.25,
+        "phase1_simulatable": 203,
+        "phase1_unsimulatable": 75,
+        "phase2_simulatable": 132,
+        "phase2_unsimulatable": 136,
+        "delta_yield_pp": -23.77
+      },
+      "generality": {
+        "phase2_bleu": 0.890,
+        "phase2_cosine": 0.380,
+        "phase2_jaccard": 0.837
+      }
+    },
+    "openai/gpt-oss-20b_contrastive_posthoc": {
+      "baseline_key": "openai/gpt-oss-20b_posthoc",
+      "extension_key": "openai/gpt-oss-20b_contrastive_posthoc",
+      "precision": {
+        "phase1_macro": 85.79,
+        "phase2_macro": 72.99,
+        "delta_pp": -12.80
+      },
+      "simulatable_yield": {
+        "phase1_yield_pct": 43.97,
+        "phase2_yield_pct": 66.80,
+        "phase1_simulatable": 113,
+        "phase1_unsimulatable": 144,
+        "phase2_simulatable": 163,
+        "phase2_unsimulatable": 81,
+        "delta_yield_pp": 22.83
+      },
+      "generality": {
+        "phase2_bleu": 0.830,
+        "phase2_cosine": 0.303,
+        "phase2_jaccard": 0.767
+      }
+    },
+    "openai/gpt-oss-120b_contrastive_cot": {
+      "baseline_key": "openai/gpt-oss-120b_cot",
+      "extension_key": "openai/gpt-oss-120b_contrastive_cot",
+      "precision": {
+        "phase1_macro": 85.78,
+        "phase2_macro": 87.82,
+        "delta_pp": 2.04
+      },
+      "simulatable_yield": {
+        "phase1_yield_pct": 76.49,
+        "phase2_yield_pct": 82.04,
+        "phase1_simulatable": 218,
+        "phase1_unsimulatable": 67,
+        "phase2_simulatable": 201,
+        "phase2_unsimulatable": 44,
+        "delta_yield_pp": 5.55
+      },
+      "generality": {
+        "phase2_bleu": 0.872,
+        "phase2_cosine": 0.335,
+        "phase2_jaccard": 0.816
+      }
+    },
+    "openai/gpt-oss-120b_contrastive_posthoc": {
+      "baseline_key": "openai/gpt-oss-120b_posthoc",
+      "extension_key": "openai/gpt-oss-120b_contrastive_posthoc",
+      "precision": {
+        "phase1_macro": 71.75,
+        "phase2_macro": 84.50,
+        "delta_pp": 12.75
+      },
+      "simulatable_yield": {
+        "phase1_yield_pct": 21.65,
+        "phase2_yield_pct": 58.14,
+        "phase1_simulatable": 63,
+        "phase1_unsimulatable": 228,
+        "phase2_simulatable": 172,
+        "phase2_unsimulatable": 124,
+        "delta_yield_pp": 36.49
+      },
+      "generality": {
+        "phase2_bleu": 0.811,
+        "phase2_cosine": 0.298,
+        "phase2_jaccard": 0.779
+      }
+    }
+  },
+  "summary_averages": {
+    "phase1_overall_precision": 79.57,
+    "phase2_overall_precision": 81.77,
+    "precision_gain_pp": 2.20,
+    "phase1_overall_simulatable_yield": 53.78,
+    "phase2_overall_simulatable_yield": 64.06,
+    "yield_gain_pp": 10.28
+  }
+}
